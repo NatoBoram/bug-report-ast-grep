@@ -1,0 +1,28 @@
+diff --git a/index.d.ts b/index.d.ts
+index 9749e14cdad0c7d0df1ed3bf88a742a2433b012f..f1ffc4bb74cd4510190f157bceba9c2e3e81bb93 100644
+--- a/index.d.ts
++++ b/index.d.ts
+@@ -39,7 +39,7 @@ export interface FindConfig {
+    */
+   languageGlobs?: Array<string>
+ }
+-export const enum Lang {
++export enum Lang {
+   Html = 'Html',
+   JavaScript = 'JavaScript',
+   Tsx = 'Tsx',
+diff --git a/package.json b/package.json
+index e32384fc7f6bea6165bdf2631879a5cff5960a1f..1372f8ff115bde7dcf89a5954987d27f476a7bca 100644
+--- a/package.json
++++ b/package.json
+@@ -41,8 +41,8 @@
+   },
+   "scripts": {
+     "artifacts": "napi artifacts",
+-    "build": "napi build --platform --release",
+-    "build:debug": "napi build --platform",
++    "build": "napi build --no-const-enum --platform --release",
++    "build:debug": "napi build --no-const-enum --platform",
+     "prepublishOnly": "napi prepublish -t npm --skip-gh-release",
+     "test": "ava",
+     "version": "napi version"
